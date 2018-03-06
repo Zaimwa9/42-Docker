@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ ! -f /etc/check.md5 ]
+then
+	md5sum /etc/crontab > /etc/check.md5
+else
+	TEST=$(md5sum -c /etc/check.md5 | cut -d ':' -f 2)
+	if [ "$TEST" == " Réussi" ]
+	then
+		echo "Crontab was not modified within the last 24 hours"
+	else
+		echo "Check your mails, Crontab was modified !"
+		echo "Crontab has been modified within the last 24 hours" | mail -s "Crontab Notif" root
+		md5sum /etc/crontab > /etc/check.md5
+	fi
+fi

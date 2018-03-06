@@ -1,0 +1,2 @@
+With an IPv4 reverse lookup we can see that the server is of DHCP (Dynamic Host Configuration Protocol) type meaning that its role is to distribute IP addresses within a network.
+When a computer connects to the network, it will emit a broadcast packet (broadcast on 255.255.255.255) on the local network. As a response, the DHCP sends all the informations required by the client.

@@ -1,0 +1,2 @@
+By default, as on my machine, no keys are authorized yet. When authorizing one, for example for github, an authorized_keys file will be created in the .ssh folder.
+Hence the file containing the authorized keys is in ~/.shh/authorized_keys
